@@ -1,0 +1,56 @@
+{
+    "name": "cds_housemanager",
+    "version": "1.0.0",
+    "description": "This is the repository for the house manager",
+    "main": "index.ts",
+    "scripts": {
+        "start": "node dist/index.js",
+        "build": "tsc ",
+        "dev": "nodemon -e ts -w ./src -x npm run watcher",
+        "watcher": "ts-node src/index.ts",
+        "test": "jest -atch",
+        "prepare": "husky install"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/donpapitoskey/CDS_houseManager.git"
+    },
+    "keywords": [
+        "node"
+    ],
+    "author": "Donpapitoskey",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/donpapitoskey/CDS_houseManager/issues"
+    },
+    "homepage": "https://github.com/donpapitoskey/CDS_houseManager#readme",
+    "devDependencies": {
+        "@types/node": "^14.14.32",
+        "@typescript-eslint/eslint-plugin": "^4.16.1",
+        "@typescript-eslint/parser": "^4.16.1",
+        "eslint": "^7.21.0",
+        "eslint-config-standard": "^16.0.2",
+        "eslint-plugin-import": "^2.22.1",
+        "eslint-plugin-node": "^11.1.0",
+        "eslint-plugin-promise": "^4.3.1",
+        "husky": "^4.3.8",
+        "jest": "^26.6.3",
+        "nodemon": "^2.0.7",
+        "prettier": "^2.2.1",
+        "ts-node": "^9.1.1"
+    },
+    "dependencies": {
+        "node": "^15.10.0"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    },
+    "lint-staged": {
+        "*.{js,ts,json}": [
+            "prettier --write",
+            "eslint --fix"
+        ]
+    }
+}
