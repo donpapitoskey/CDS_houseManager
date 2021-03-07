@@ -8,8 +8,7 @@
         "build": "tsc ",
         "dev": "nodemon -e ts -w ./src -x npm run watcher",
         "watcher": "ts-node src/index.ts",
-        "test": "jest -atch",
-        "prepare": "husky install"
+        "test": "jest --watch"
     },
     "repository": {
         "type": "git",
@@ -48,7 +47,7 @@
         }
     },
     "lint-staged": {
-        "*.{js,ts,json}": [
+        "**/*.{js,ts,json}": [
             "prettier --write",
             "eslint --fix"
         ]
